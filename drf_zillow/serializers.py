@@ -9,7 +9,6 @@ from rest_framework import serializers
 from .utils import deep_search
 
 
-# pylint: disable=abstract-method
 class ZillowDeepSearchSerializer(serializers.Serializer):
     """ ZillowDeepSearchSerializer serializer """
 
