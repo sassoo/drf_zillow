@@ -9,7 +9,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from .serializers import ZillowDeepSearchSerializer
+from .serializers import ZillowDeepSearchForm
 
 
 class ZillowDeepSearchView(GenericAPIView):
@@ -17,7 +17,7 @@ class ZillowDeepSearchView(GenericAPIView):
 
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
-    serializer_class = ZillowDeepSearchSerializer
+    serializer_class = ZillowDeepSearchForm
 
     def post(self, request):
         """ Query the Zillow API by address """

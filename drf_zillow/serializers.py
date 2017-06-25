@@ -9,14 +9,14 @@ from rest_framework import serializers
 from .utils import deep_search
 
 
-class ZillowDeepSearchSerializer(serializers.Serializer):
-    """ ZillowDeepSearchSerializer serializer """
+class ZillowDeepSearchForm(serializers.Serializer):
+    """ ZillowDeepSearchForm serializer """
 
     street = serializers.CharField(max_length=100)
     citystatezip = serializers.CharField(max_length=100)
 
     def save(self, **kwargs):
-        """ Override the default save method """
+        """ DRF Override to perform the Zillow query """
 
         return deep_search(
             self.validated_data['street'],

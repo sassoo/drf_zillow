@@ -3,9 +3,6 @@
     ~~~~~
 
     Helper methods for communicating with the Zillow XML API.
-
-    ZILLOW_TABLE contains the name of the property in the
-    Zillow API (key) & a value that we much prefer
 """
 
 import requests
@@ -16,10 +13,7 @@ from lxml import etree
 
 BASE_URL = 'https://www.zillow.com'
 DEEP_SEARCH_URL = '%s/webservice/GetDeepSearchResults.htm' % BASE_URL
-
-ZILLOW_KEY = settings.ZILLOW_KEY
-
-ZILLOW_TABLE = {
+DEEP_SEARCH_TABLE = {
     'bathrooms': 'bathrooms',
     'bedrooms': 'bedrooms',
     'finishedSqFt': 'livingSqft',
@@ -32,6 +26,7 @@ ZILLOW_TABLE = {
     'zestimate/last-updated': 'lastUpdated',
     'homedetails': 'zillowLink',
 }
+ZILLOW_KEY = settings.ZILLOW_KEY
 
 
 def _run_query(url, params):
@@ -70,7 +65,7 @@ def deep_search(street, citystatezip):
     ret = {}
     tree = _run_query(DEEP_SEARCH_URL, params)
 
-    for z_key, key in ZILLOW_TABLE.items():
+    for z_key, key in DEEP_SEARCH_TABLE.items():
         try:
             ret[key] = tree.find('.//%s' % z_key).text
             ret[key] = int(float(ret[key]))
