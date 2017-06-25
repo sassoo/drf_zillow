@@ -1,6 +1,6 @@
 """
     views
-    ~~~~~~~~~~
+    ~~~~~
 
     Common DRF views for interacting with Zillow
 """

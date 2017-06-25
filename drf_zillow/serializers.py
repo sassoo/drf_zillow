@@ -1,8 +1,8 @@
 """
-    private.serializers
-    ~~~~~~~~~~~~~~~~~~~
+    serializers
+    ~~~~~~~~~~~
 
-    Processor related DRF serializers.
+    Zillow related DRF serializers.
 """
 
 from rest_framework import serializers

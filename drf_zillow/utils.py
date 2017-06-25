@@ -5,7 +5,7 @@
     Helper methods for communicating with the Zillow XML API.
 
     ZILLOW_TABLE contains the name of the property in the
-    zillow API (key) & a value that we much prefer
+    Zillow API (key) & a value that we much prefer
 """
 
 import requests
@@ -55,10 +55,10 @@ def deep_search(street, citystatezip):
         'citystatezip': 'Melbourne Fl 32951',
 
     :raises:
-        IOError in the event that communicating with zillow
+        IOError in the event that communicating with Zillow
         fails for any reason.
     :returns:
-        A python dictionary of zillow key vals or None if
+        A python dictionary of Zillow key vals or None if
         nothing is found in Zillow
     """
 
