@@ -10,7 +10,10 @@ setup(
     description='Zillow API interface for DRF',
     author='Sassoo',
     author_email='noreply@devnull.seriously',
-    install_requires=[],
+    install_requires=[
+        'lxml',
+        'requests',
+    ],
     classifiers=[
         'Framework :: Django',
         'Intended Audience :: Developers',
