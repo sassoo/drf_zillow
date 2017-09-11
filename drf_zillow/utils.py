@@ -53,8 +53,8 @@ def deep_search(street, citystatezip):
         IOError in the event that communicating with Zillow
         fails for any reason.
     :returns:
-        A python dictionary of Zillow key vals or None if
-        nothing is found in Zillow
+        A python dictionary of Zillow key vals or empty dict
+        if nothing is found in Zillow
     """
 
     params = {
@@ -78,7 +78,5 @@ def deep_search(street, citystatezip):
         del ret['lastUpdated']
     if ret.get('value'):
         ret['valuePretty'] = '$' + '{:,}'.format(ret['value'])
-    if ret.get('zillowLink'):
-        return ret
 
-    return None
+    return {}
