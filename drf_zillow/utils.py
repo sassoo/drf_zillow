@@ -79,4 +79,4 @@ def deep_search(street, citystatezip):
     if ret.get('value'):
         ret['valuePretty'] = '$' + '{:,}'.format(ret['value'])
 
-    return {}
+    return ret
