@@ -74,8 +74,12 @@ def deep_search(street, citystatezip):
 
     if ret.get('lastSoldPrice'):
         ret['lastSoldPricePretty'] = '$' + '{:,}'.format(ret['lastSoldPrice'])
+    if ret.get('livingSqft'):
+        ret['livingSqftPretty'] = '{:,}'.format(ret['livingSqft'])
     if ret.get('lastUpdated') == '12/31/1969':
         del ret['lastUpdated']
+    if ret.get('totalSqft'):
+        ret['totalSqftPretty'] = '{:,}'.format(ret['totalSqft'])
     if ret.get('value'):
         ret['valuePretty'] = '$' + '{:,}'.format(ret['value'])
 
